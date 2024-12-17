@@ -24,6 +24,10 @@ class Handler(IHandler):
     def successor(self):
         return self._successor
 
+    @property
+    def success(self):
+        return self._success
+
     def set_successor(self, successor):
         self._successor = successor
         return successor
