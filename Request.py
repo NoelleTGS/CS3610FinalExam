@@ -1,12 +1,21 @@
 from enum import Enum
 
 
+# The level of the employee at the company
+# Interns can only take off up to 4 days at once.
+# Juniors can take off up to 2 weeks at once.
+# Seniors can take off up to 4 weeks at once.
 class Level(Enum):
     Intern = 1
     Junior = 2
     Senior = 3
 
 
+# The severity of the reason for the leave
+# Regular reasons will only be approved occasionally.
+# Critical reasons will be approved most of the time.
+# Special reasons will always be approved, as it is
+#     reserved for reasons such as company events.
 class Reason(Enum):
     Regular = 1
     Critical = 2
