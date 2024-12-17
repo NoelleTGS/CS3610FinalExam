@@ -32,15 +32,20 @@ class Handler(IHandler):
     def check_constraints(self, request: Request):
         if request.employee_level == Level.Intern and request.days > 4:
             self._success = False
-            raise ValueError("Interns can only request up to 4 days at once.")
+            print("Interns can only request up to 4 days at once.")
+            return False
 
         if request.employee_level == Level.Junior and request.days > 14:
             self._success = False
-            raise ValueError("Juniors can only request up to 2 weeks at once.")
+            print("Juniors can only request up to 2 weeks at once.")
+            return False
 
         if request.employee_level == Level.Senior and request.days > 28:
             self._success = False
-            raise ValueError("Seniors can only request up to 4 weeks at once.")
+            print("Seniors can only request up to 4 weeks at once.")
+            return False
+
+        return True
 
     @abstractmethod
     def process_request(self, request: Request):
