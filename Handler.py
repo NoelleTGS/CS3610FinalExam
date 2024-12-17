@@ -1,7 +1,18 @@
 from abc import abstractmethod
 
 from IHandler import IHandler
-from Request import Request
+from Request import Request, Level
+
+
+def check_constraints(request: Request):
+    if request.employee_level == Level.Intern and request.days > 4:
+        raise ValueError("Interns can only request up to 4 days at once.")
+
+    if request.employee_level == Level.Junior and request.days > 14:
+        raise ValueError("Juniors can only request up to 2 weeks at once.")
+
+    if request.employee_level == Level.Senior and request.days > 28:
+        raise ValueError("Seniors can only request up to 4 weeks at once.")
 
 
 class Handler(IHandler):
