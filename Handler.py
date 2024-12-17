@@ -7,7 +7,7 @@ from Request import Request
 class Handler(IHandler):
     def __init__(self, successor=None):
         self._successor = successor
-        self._success = False
+        self._success = None
 
     @property
     def successor(self):
