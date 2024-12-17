@@ -27,5 +27,6 @@ class Request:
         self.days = days
         self.employee_level = level
         self.reason = reason
+
     def __str__(self):
-        return f"Request for {self.days} days by a {self.employee_level.name} for reason {self.reason.name}"
+        return f"Request for {self.days} day(s) by a(n) {self.employee_level.name} for reason {self.reason.name}"
