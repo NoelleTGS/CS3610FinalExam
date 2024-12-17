@@ -17,6 +17,10 @@ class Handler(IHandler):
     def success(self):
         return self._success
 
+    @success.setter
+    def success(self, value):
+        self._success = value
+
     def set_successor(self, successor):
         self._successor = successor
         return successor
